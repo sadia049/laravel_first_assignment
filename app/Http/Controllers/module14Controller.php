@@ -36,7 +36,7 @@ class module14Controller extends Controller
 
         //cookie request
 
-        $rememberToken=$request->cookie();
+        $rememberToken=$request->cookie('remembertoken');
         if(!(isset($rememberToken)))
              $rememberToken=null;
         
