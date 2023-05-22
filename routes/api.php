@@ -21,4 +21,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/hello',[module14Controller::class,'sevenInOne']);
 Route::get('/hello{page?}',[module14Controller::class,'sevenInOne']);
-route::post('/submit/{email?}',[module14Controller::class,'sevenInOne']);
+
+
+Route::post('/submit/{email?}',function($email):JsonResponse{
+
+    $em=$email;
+
+    $my_array = ["success"=> "true", "message" => "form submitted successfully"];
+    return response()->json($my_array);
+
+    
+
+});
